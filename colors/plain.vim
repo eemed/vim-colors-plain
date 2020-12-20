@@ -149,8 +149,9 @@ hi! link PreCondit        PreProc
 " __Operator__
 call s:h("Noise",         {"fg": s:norm_subtle, "gui": "NONE"})
 hi! link Operator         Noise
-hi! link LineNr           Noise
-hi! link CursorLineNr     LineNr
+
+call s:h("LineNr",         {"fg": s:norm_very_subtle, "bg": s:bg, "gui": "NONE"})
+call s:h("CursorLineNr",   {"fg": s:norm, "bg": s:cursor_line, "gui": "NONE"})
 hi! link FoldColumn       LineNr
 hi! link SignColumn       LineNr
 
@@ -227,25 +228,25 @@ hi! link helpHyperTextEntry Title
 hi! link helpHyperTextJump  String
 
 " __StatusLine__
-call s:h("StatusLine",        {"gui": "underline", "bg": s:bg, "fg": s:norm_very_subtle})
+call s:h("StatusLine",        {"gui": "NONE", "bg": s:cursor_line, "fg": s:norm_subtle})
 " __StatusLineNC__
-call s:h("StatusLineNC",      {"gui": "underline", "bg": s:bg, "fg": s:bg_subtle})
+call s:h("StatusLineNC",      {"gui": "NONE", "bg": s:bg, "fg": s:bg_very_subtle})
 " __WildMenu__
 call s:h("WildMenu",          {"gui": "underline,bold", "bg": s:bg, "fg": s:norm})
 
-call s:h("StatusLineOk",      {"gui": "underline", "bg": s:bg, "fg": s:ok})
-call s:h("StatusLineError",   {"gui": "underline", "bg": s:bg, "fg": s:error})
-call s:h("StatusLineWarning", {"gui": "underline", "bg": s:bg, "fg": s:warning})
+call s:h("StatusLineOk",      {"gui": "NONE", "bg": s:bg, "fg": s:ok})
+call s:h("StatusLineError",   {"gui": "NONE", "bg": s:bg, "fg": s:error})
+call s:h("StatusLineWarning", {"gui": "NONE", "bg": s:bg, "fg": s:warning})
 
 " __Pmenu__
 call s:h("Pmenu",         {"fg": s:norm, "bg": s:cursor_line})
 hi! link PmenuSbar        Pmenu
 hi! link PmenuThumb       Pmenu
 " __PmenuSel__
-call s:h("PmenuSel",      {"fg": s:norm, "bg": s:cursor_line, "gui": "bold"})
+call s:h("PmenuSel",      {"fg": s:norm, "bg": s:visual, "gui": "NONE"})
 
 hi! link TabLine          Normal
-hi! link TabLineSel       Keyword
+hi! link TabLineSel       PmenuSel
 hi! link TabLineFill      Normal
 
 " __CursorLine__
